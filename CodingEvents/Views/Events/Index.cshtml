@@ -1,4 +1,6 @@
-﻿<h1>Coding Events</h1>
+﻿<link rel="stylesheet" type="text/css" href="~/css/site.css" />
+
+<h1>Coding Events</h1>
 
 <p>
     <a asp-controller="Events" asp-action="Add">Add Event</a>
@@ -9,13 +11,24 @@
     <p>No events yet.</p>
 }
 
-<ul>
-    @foreach (string meeting in ViewBag.events)
-    {
-        <li>@meeting</li>
-    }
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody> 
+        @foreach (KeyValuePair<string, string> meeting in ViewBag.events)
+        {
+            <tr>
+                <td>@meeting.Key</td>
+                <td>@meeting.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<p style="font-size:10px">
-    <partial name="/Views/Shared/_LinkListPartial.cshtml" />
-</p>
+@*<p style="font-size:10px">
+        <partial name="/Views/Shared/_LinkListPartial.cshtml" />
+    </p>*@

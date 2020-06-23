@@ -8,7 +8,7 @@ namespace CodingEvents.Controllers
 {
     public class EventsController : Controller
     {
-        static private List<string> Events = new List<string>();
+        static private Dictionary<string, string> Events = new Dictionary<string, string>();
 
         // GET: /<controller>/
         [HttpGet]
@@ -27,9 +27,9 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/Events/Add")]
-        public IActionResult NewEvent(string name)
+        public IActionResult NewEvent(string name, string description)
         {
-            Events.Add(name);
+            Events.Add(name, description);
 
             return Redirect("/Events");
         }
