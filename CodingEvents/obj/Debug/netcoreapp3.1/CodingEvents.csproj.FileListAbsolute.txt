@@ -39,3 +39,4 @@ D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Events\Add.cshtml.g.cs
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LinkListPartial.cshtml.g.cs
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Events\Delete.cshtml.g.cs
+D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Events\Edit.cshtml.g.cs
