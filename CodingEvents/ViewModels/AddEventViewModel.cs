@@ -26,8 +26,7 @@ namespace CodingEvents.ViewModels
         [Required(ErrorMessage = "Required field")]
         public string Location { get; set; }
 
-        [Required(ErrorMessage = "Required field")]
-        [Range(0, 100000)]
+        [Range(0, 100000, ErrorMessage = "Value must be between 0 and 100,000")]
         public int NumberOfAttendees { get; set; }
 
         public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
