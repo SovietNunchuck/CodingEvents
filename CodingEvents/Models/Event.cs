@@ -10,6 +10,9 @@ namespace CodingEvents.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string ContactEmail { get; set; }
+        public EventType Type { get; set; }
+        public string Location { get; set; }
+        public int NumberOfAttendees { get; set; }
 
         public int Id { get; }
         private static int nextId = 1;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CodingEvents.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,6 +21,22 @@ namespace CodingEvents.ViewModels
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string ContactEmail { get; set; }
 
+        public EventType Type { get; set; }
+
+        [Required(ErrorMessage = "Required field")]
+        public string Location { get; set; }
+
+        [Required(ErrorMessage = "Required field")]
+        [Range(0, 100000)]
+        public int NumberOfAttendees { get; set; }
+
+        public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
+        {
+            new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),
+            new SelectListItem(EventType.Meetup.ToString(), ((int)EventType.Meetup).ToString()),
+            new SelectListItem(EventType.Workshop.ToString(), ((int)EventType.Workshop).ToString()),
+            new SelectListItem(EventType.Social.ToString(), ((int)EventType.Social).ToString())
+        };
 
     }
 }
