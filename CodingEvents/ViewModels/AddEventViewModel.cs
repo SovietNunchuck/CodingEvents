@@ -29,6 +29,11 @@ namespace CodingEvents.ViewModels
         [Range(0, 100000, ErrorMessage = "Value must be between 0 and 100,000")]
         public int NumberOfAttendees { get; set; }
 
+        public bool IsTrue { get { return true; } }
+
+        [Compare("IsTrue", ErrorMessage = "For the purposes of this exercise, this box must be checked.")]
+        public bool ReservationRequired { get; set; }
+
         public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
         {
             new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),

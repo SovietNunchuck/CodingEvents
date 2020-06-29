@@ -34,5 +34,10 @@
         <select asp-for="Type" asp-items="Model.EventTypes">
         </select>
     </div>
+    <div class="form-group">
+        <label asp-for="ReservationRequired">RSVP</label>
+        <input asp-for="ReservationRequired" />
+        <span asp-validation-for="ReservationRequired"></span>
+    </div>
     <input type="submit" value="Add Event" />
 </form>

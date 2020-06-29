@@ -29,6 +29,7 @@
             <th scope="col">Location</th>
             <th scope="col"># Attendees</th>
             <th scope="col">Contact Email</th>
+            <th scope="col">RSVP Required</th>
         </tr>
     </thead>
     <tbody> 
@@ -42,6 +43,7 @@
                 <td>@evt.Location</td>
                 <td>@evt.NumberOfAttendees</td>
                 <td>@evt.ContactEmail</td>
+                <td>@evt.ReservationRequired</td>
                 <td><a asp-controller="Events" asp-action="Edit" asp-route-id="@evt.Id">Edit Event</a></td>
             </tr>
         }
