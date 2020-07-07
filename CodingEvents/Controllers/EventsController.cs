@@ -98,6 +98,8 @@ namespace CodingEvents.Controllers
             revisedEvent.Description = description;
             revisedEvent.ContactEmail = contactEmail;
             revisedEvent.Location = location;
+            context.Events.Update(revisedEvent);
+            context.SaveChanges();
 
             return Redirect("/Events");
         }
