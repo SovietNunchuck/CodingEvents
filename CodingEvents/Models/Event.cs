@@ -15,13 +15,10 @@ namespace CodingEvents.Models
         public int NumberOfAttendees { get; set; }
         public bool ReservationRequired { get; set; }
 
-        public int Id { get; }
-        private static int nextId = 1;
+        public int Id { get; set; }
 
         public Event()
         {
-            Id = nextId;
-            nextId++;
         }
 
         public Event(string name, string description, string contactEmail) : this()

@@ -11,11 +11,18 @@ namespace CodingEvents.Controllers
 {
     public class EventsController : Controller
     {
+        private EventDbContext context;
+
+        public EventsController(EventDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
         // GET: /<controller>/
         [HttpGet]
         public IActionResult Index()
         {
-            List<Event> events = new List<Event> (EventData.GetAll());
+            List<Event> events = context.Events.ToList();
 
             return View(events);
         }
@@ -44,7 +51,8 @@ namespace CodingEvents.Controllers
                     ReservationRequired = addEventViewModel.ReservationRequired
                 };
 
-                EventData.Add(newEvent);
+                context.Events.Add(newEvent);
+                context.SaveChanges();
 
                 return Redirect("/Events");
             }
@@ -55,7 +63,7 @@ namespace CodingEvents.Controllers
 
         public IActionResult Delete()
         {
-            ViewBag.events = EventData.GetAll();
+            ViewBag.events = context.Events.ToList();
             return View();
         }
 
@@ -64,8 +72,11 @@ namespace CodingEvents.Controllers
         {
             foreach (int eventId in eventIds)
             {
-                EventData.Remove(eventId);
+                Event theEvent = context.Events.Find(eventId);
+                context.Events.Remove(theEvent);
             }
+
+            context.SaveChanges();
 
             return Redirect("/Events");
         }
@@ -73,7 +84,7 @@ namespace CodingEvents.Controllers
         [HttpGet("/Events/Edit/{eventId}")]
         public IActionResult Edit(int eventId)
         {
-            ViewBag.editingEvent = EventData.GetById(eventId);
+            ViewBag.editingEvent = context.Events.Find(eventId);
             ViewBag.title = $"Edit Event {ViewBag.editingEvent.Name} (id={eventId})";
 
             return View();
@@ -82,7 +93,7 @@ namespace CodingEvents.Controllers
         [HttpPost("/Events/Edit")]
         public IActionResult SubmitEditEventForm(int eventId, string name, string description, string contactEmail, string location)
         {
-            Event revisedEvent = EventData.GetById(eventId);
+            Event revisedEvent = context.Events.Find(eventId);
             revisedEvent.Name = name;
             revisedEvent.Description = description;
             revisedEvent.ContactEmail = contactEmail;
