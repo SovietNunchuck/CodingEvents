@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Views\Events\" />
     <Folder Include="Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
