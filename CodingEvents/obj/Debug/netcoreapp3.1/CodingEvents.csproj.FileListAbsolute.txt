@@ -69,3 +69,4 @@ D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Add.cshtml.g.cs
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Index.cshtml.g.cs
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\AddEvent.cshtml.g.cs
+D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Detail.cshtml.g.cs
