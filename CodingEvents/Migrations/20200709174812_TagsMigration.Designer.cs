@@ -3,14 +3,16 @@ using System;
 using CodingEvents.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CodingEvents.Migrations
 {
     [DbContext(typeof(EventDbContext))]
-    partial class EventDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200709174812_TagsMigration")]
+    partial class TagsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,21 +72,6 @@ namespace CodingEvents.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("CodingEvents.Models.EventTag", b =>
-                {
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EventId", "TagId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("EventTags");
-                });
-
             modelBuilder.Entity("CodingEvents.Models.Tag", b =>
                 {
                     b.Property<int>("Id")
@@ -110,21 +97,6 @@ namespace CodingEvents.Migrations
                     b.HasOne("CodingEvents.Models.Tag", null)
                         .WithMany("Events")
                         .HasForeignKey("TagId");
-                });
-
-            modelBuilder.Entity("CodingEvents.Models.EventTag", b =>
-                {
-                    b.HasOne("CodingEvents.Models.Event", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CodingEvents.Models.Tag", "Tag")
-                        .WithMany()
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

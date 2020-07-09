@@ -109,5 +109,21 @@ namespace CodingEvents.Controllers
 
             return Redirect("/Events");
         }
+
+        // responds to route "/Events/Detail/X"
+        public IActionResult Detail(int id)
+        {
+            Event theEvent = context.Events
+                .Include(x => x.Category)
+                .Single(x => x.Id == id);
+
+            List<EventTag> eventTags = context.EventTags
+                .Where(et => et.EventId == id)
+                .Include(et => et.Tag)
+                .ToList();
+
+            EventDetailViewModel viewModel = new EventDetailViewModel(theEvent, eventTags);
+            return View(viewModel);
+        }
     }
 }

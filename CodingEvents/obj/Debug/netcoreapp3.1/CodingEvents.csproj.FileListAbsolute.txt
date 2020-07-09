@@ -65,3 +65,7 @@ D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\bin\Debug
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\EventCategory\Index.cshtml.g.cs
 D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\EventCategory\Create.cshtml.g.cs
+D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Events\Detail.cshtml.g.cs
+D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Add.cshtml.g.cs
+D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\Index.cshtml.g.cs
+D:\LC_Classwork\C# Projects\Learning ASP.NET\CodingEvents\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Tag\AddEvent.cshtml.g.cs
