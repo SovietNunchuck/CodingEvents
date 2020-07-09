@@ -21,7 +21,10 @@ namespace CodingEvents.ViewModels
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string ContactEmail { get; set; }
 
-        public EventType Type { get; set; }
+        [Required(ErrorMessage = "Required field")]
+        public int CategoryId { get; set; }
+
+        public List<SelectListItem> Categories { get; set; }
 
         [Required(ErrorMessage = "Required field")]
         public string Location { get; set; }
@@ -34,13 +37,22 @@ namespace CodingEvents.ViewModels
         [Compare("IsTrue", ErrorMessage = "For the purposes of this exercise, this box must be checked.")]
         public bool ReservationRequired { get; set; }
 
-        public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
+        public AddEventViewModel(List<EventCategory> categories)
         {
-            new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),
-            new SelectListItem(EventType.Meetup.ToString(), ((int)EventType.Meetup).ToString()),
-            new SelectListItem(EventType.Workshop.ToString(), ((int)EventType.Workshop).ToString()),
-            new SelectListItem(EventType.Social.ToString(), ((int)EventType.Social).ToString())
-        };
+            Categories = new List<SelectListItem>();
 
+            foreach (EventCategory category  in categories)
+            {
+                Categories.Add(
+                    new SelectListItem
+                    {
+                        Value = category.Id.ToString(),
+                        Text = category.Name
+                    }    
+                );
+            }
+        }
+
+        public AddEventViewModel() { }
     }
 }

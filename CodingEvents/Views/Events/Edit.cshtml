@@ -1,4 +1,7 @@
-﻿<h1>Edit Event</h1>
+﻿@using CodingEvents.ViewModels 
+@model AddEventViewModel 
+
+<h1>Edit Event</h1>
 
 <form method="post" action="/events/edit">
     <input type="hidden" value="@ViewBag.editingEvent.Id" name="eventId" />
@@ -13,6 +16,11 @@
     </div>
     <div class="form-group">
         <label>Location: <input name="location" type="text" value="@ViewBag.editingEvent.Location" /></label>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumberOfAttendees"># Attendees</label>
+        <input asp-for="NumberOfAttendees" value="@ViewBag.editingEvent.NumberOfAttendees"/>
+        <span asp-validation-for="NumberOfAttendees"></span>
     </div>
     <input type="submit" value="Save Changes" />
 </form>
